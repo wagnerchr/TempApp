@@ -1,0 +1,11 @@
+{
+  "name": "Caraguatatuba",
+  "temperature": "18",
+  "observation": "Predominantemente Limpo",
+  "maxTemp": "33",
+  "minTemp": "20",
+  "wind": "25",
+  "humidity": "64",
+  "feelsLike": "34",
+  "pressure": "1.007"
+}
