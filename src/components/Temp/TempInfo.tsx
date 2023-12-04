@@ -13,14 +13,14 @@ export const TempInfo: React.FC<TempInfoProps> = ({ name, logo, value }) => {
 
   return (
     <View >
-      <LinearGradient
+      {/* <LinearGradient
       colors={['rgba(234, 234, 234, 0.06)', 'rgba(234, 234, 234, 0.00)']}
       style={styles.container}
-    >
+    > */}
       <Image source={logoSource} />
       <Text >{name}</Text>
       <Text >{value}</Text>
-    </LinearGradient>
+    {/* </LinearGradient> */}
      
     </View>
   );
@@ -28,6 +28,6 @@ export const TempInfo: React.FC<TempInfoProps> = ({ name, logo, value }) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    display: 'flex',
   }
 });

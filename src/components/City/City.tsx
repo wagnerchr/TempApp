@@ -14,9 +14,11 @@ export const City: React.FC<ICity> = ({ name, temperature, observation, maxTemp,
   return (
     <View style={styles.container}>
       <Text style={styles.cityName}>{name}</Text>
-      <Text style={styles.cityTemperature}>{temperature}<span style={styles.span}>º</span></Text>
+      <View style={styles.cityTemperatureView}>
+        <Text style={styles.cityTemperature}>{temperature}</Text>
+        <Text style={styles.span}>º</Text>
+      </View>
       <Text style={styles.observation}>{observation}</Text>
-      
       <Text style={styles.maxMin}>•Máx.: {maxTemp}° Mín.: {minTemp}°</Text>
       <Text></Text>
     </View>
@@ -27,34 +29,44 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
   },
+
   cityName: {
     color: '#FFF',
     fontFamily: customFonts['Jaldi-Regular'],
     fontSize: 24,
     fontStyle: 'normal',
     fontWeight: '400',
-    lineHeight: 24, 
     letterSpacing: 0.024, 
   },
 
-  cityTemperature: {
+  cityTemperatureView: {
     display: 'flex',
+    flexDirection: 'row',
+  },
+
+  cityTemperature: {
     color: '#FFF',
-    height: 56,
+    textBreakStrategy: 'simple',
     fontFamily: customFonts['PlusJakartaSans-Bold'],
     fontSize: 64,
     fontStyle: 'normal',
     fontWeight: '200',
-    lineHeight: 24,
     letterSpacing: 0.064,
-    textAlign:'center',
-    marginTop: 32,
+    margin: 0,
+    textAlign: 'center',
+    alignItems: 'center'
   },
   span: {
-    alignItems: 'center',
+    color: '#FFF',
     fontFamily: customFonts['PlusJakartaSans-Bold'],
-    fontSize: 32, 
-    marginTop: -7
+    fontSize: 48,
+    fontStyle: 'normal',
+    fontWeight: '200',
+    letterSpacing: 0.064,
+    textAlign: 'center',
+    alignItems: 'center',
+    paddingTop: 7,
+    paddingLeft: 5,
   },
 
   observation: {
@@ -62,7 +74,7 @@ const styles = StyleSheet.create({
     fontFamily: customFonts['Roboto-Regular'],
     fontSize: 15,
     fontWeight: '500',
-    lineHeight: 18, 
+    // lineHeight: 18, 
     letterSpacing: 0.015,
   },
 
@@ -71,17 +83,11 @@ const styles = StyleSheet.create({
     fontFamily: customFonts['Roboto'],
     fontSize: 16,
     fontWeight: '500',
-    lineHeight: 20,
+    // lineHeight: 20,
     letterSpacing: 0.016,
     margin: 4,
   },
 
 
-  text: {
-    height: 88,
-    fontSize: 16,
-    textAlign: 'center',
-    marginHorizontal: 20,
-    marginBottom: 30,
-  },
+  
 });
